@@ -4,12 +4,12 @@ interface
 
 uses
   Data.DB,
-  Model.DAO.Cliente.Interfaces;
+  Model.DAO.Cadastro.View.Interfaces;
 
 type
   IModelDAOClienteFabrica = interface
-    function DataSource(pValor: TDataSource): IModelDAOCliente;
-    function Clientes: IModelDAOCliente;
+    function DataSource(pValor: TDataSource): IModelDAOCadastroClienteView;
+    function Clientes: IModelDAOCadastroClienteView;
   end;
 
 

@@ -111,7 +111,7 @@ end;
 
 procedure TViewCadastroCliente.FormCreate(Sender: TObject);
 begin
-//  ReportMemoryLeaksOnShutdown := True;
+  ReportMemoryLeaksOnShutdown := True;
 
   FCodigo := 0;
   FAcessoCadastro := acTotal;
@@ -127,10 +127,8 @@ begin
     .ClientesFabrica
     .DataSource(dsCadastro)
     .Codigo(FCodigo)
-    .Eventos
-    .AfterDelete(AfterDelete);
-
-  FController.ClientesFabrica.Clientes.Fechar.Abrir;
+    .SetAfterDelete(AfterDelete)
+    .Consultar;
 end;
 
 procedure TViewCadastroCliente.PreencherComboEstados;

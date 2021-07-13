@@ -102,15 +102,8 @@
         </DelphiCompile>
         <DCCReference Include="Controller\Controller.Interfaces.pas"/>
         <DCCReference Include="Controller\Controller.pas"/>
-        <DCCReference Include="Model\Model.Eventos.Fabrica.Interfaces.pas"/>
-        <DCCReference Include="Model\Model.Eventos.Fabrica.pas"/>
-        <DCCReference Include="Model\Model.Eventos.Get.Interfaces.pas"/>
-        <DCCReference Include="Model\Model.Eventos.pas"/>
-        <DCCReference Include="Model\Model.Eventos.Preencher.Interfaces.pas"/>
         <DCCReference Include="Model\DAO\Model.DAO.Cliente.Fabrica.Interfaces.pas"/>
         <DCCReference Include="Model\DAO\Model.DAO.Cliente.Fabrica.pas"/>
-        <DCCReference Include="Model\DAO\Model.DAO.Cliente.FireDAC.pas"/>
-        <DCCReference Include="Model\DAO\Model.DAO.Cliente.Interfaces.pas"/>
         <DCCReference Include="Model\Conexao\Model.Conexao.Conectar.Fabrica.pas"/>
         <DCCReference Include="Model\Conexao\Model.Conexao.Conectar.FireDAC.FireBird.pas"/>
         <DCCReference Include="Model\Conexao\Model.Conexao.Conectar.Interfaces.pas"/>
@@ -142,6 +135,18 @@
         <DCCReference Include="Controller\Controller.TiposDados.pas"/>
         <DCCReference Include="Model\Conexao\Model.Conexao.DadosBanco.pas"/>
         <DCCReference Include="Model\Conexao\Model.Conexao.DadosBanco.Interfaces.pas"/>
+        <DCCReference Include="Model\DAO\Model.DAO.Cliente.Informacao.pas"/>
+        <DCCReference Include="Model\DAO\Cadastro\Model.DAO.Cadastro.Interfaces.pas"/>
+        <DCCReference Include="Model\DAO\Cadastro\Model.DAO.Cadastro.pas"/>
+        <DCCReference Include="Model\DAO\Model.DAO.Eventos.DataSet.Interfaces.pas"/>
+        <DCCReference Include="Model\DAO\Model.DAO.Eventos.DataSet.pas"/>
+        <DCCReference Include="Model\DAO\Cadastro\Model.DAO.Cadastro.Cliente.pas"/>
+        <DCCReference Include="Model\DAO\DAO.DMConexao.pas">
+            <Form>DMConexao</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Model\DAO\Cadastro\Model.DAO.Cadastro.View.Interfaces.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

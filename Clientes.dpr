@@ -4,19 +4,16 @@ program Clientes;
 
 
 
+
+
+
+
 uses
   Vcl.Forms,
   Controller.Interfaces in 'Controller\Controller.Interfaces.pas',
   Controller in 'Controller\Controller.pas',
-  Model.Eventos.Fabrica.Interfaces in 'Model\Model.Eventos.Fabrica.Interfaces.pas',
-  Model.Eventos.Fabrica in 'Model\Model.Eventos.Fabrica.pas',
-  Model.Eventos.Get.Interfaces in 'Model\Model.Eventos.Get.Interfaces.pas',
-  Model.Eventos in 'Model\Model.Eventos.pas',
-  Model.Eventos.Preencher.Interfaces in 'Model\Model.Eventos.Preencher.Interfaces.pas',
   Model.DAO.Cliente.Fabrica.Interfaces in 'Model\DAO\Model.DAO.Cliente.Fabrica.Interfaces.pas',
   Model.DAO.Cliente.Fabrica in 'Model\DAO\Model.DAO.Cliente.Fabrica.pas',
-  Model.DAO.Cliente.FireDAC in 'Model\DAO\Model.DAO.Cliente.FireDAC.pas',
-  Model.DAO.Cliente.Interfaces in 'Model\DAO\Model.DAO.Cliente.Interfaces.pas',
   Model.Conexao.Conectar.Fabrica in 'Model\Conexao\Model.Conexao.Conectar.Fabrica.pas',
   Model.Conexao.Conectar.FireDAC.FireBird in 'Model\Conexao\Model.Conexao.Conectar.FireDAC.FireBird.pas',
   Model.Conexao.Conectar.Interfaces in 'Model\Conexao\Model.Conexao.Conectar.Interfaces.pas',
@@ -35,7 +32,15 @@ uses
   View.Principal in 'View\View.Principal.pas' {ViewPrincipal},
   Controller.TiposDados in 'Controller\Controller.TiposDados.pas',
   Model.Conexao.DadosBanco in 'Model\Conexao\Model.Conexao.DadosBanco.pas',
-  Model.Conexao.DadosBanco.Interfaces in 'Model\Conexao\Model.Conexao.DadosBanco.Interfaces.pas';
+  Model.Conexao.DadosBanco.Interfaces in 'Model\Conexao\Model.Conexao.DadosBanco.Interfaces.pas',
+  Model.DAO.Cliente.Informacao in 'Model\DAO\Model.DAO.Cliente.Informacao.pas',
+  Model.DAO.Cadastro.Interfaces in 'Model\DAO\Cadastro\Model.DAO.Cadastro.Interfaces.pas',
+  Model.DAO.Cadastro in 'Model\DAO\Cadastro\Model.DAO.Cadastro.pas',
+  Model.DAO.Eventos.DataSet.Interfaces in 'Model\DAO\Model.DAO.Eventos.DataSet.Interfaces.pas',
+  Model.DAO.Eventos.DataSet in 'Model\DAO\Model.DAO.Eventos.DataSet.pas',
+  Model.DAO.Cadastro.Cliente in 'Model\DAO\Cadastro\Model.DAO.Cadastro.Cliente.pas',
+  DAO.DMConexao in 'Model\DAO\DAO.DMConexao.pas' {DMConexao: TDataModule},
+  Model.DAO.Cadastro.View.Interfaces in 'Model\DAO\Cadastro\Model.DAO.Cadastro.View.Interfaces.pas';
 
 {$R *.res}
 
@@ -43,5 +48,6 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TViewPrincipal, ViewPrincipal);
+  Application.CreateForm(TDMConexao, DMConexao);
   Application.Run;
 end.

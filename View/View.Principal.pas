@@ -35,7 +35,8 @@ implementation
 
 uses
   View.CadastroCliente,
-  View.PesquisarClientes;
+  View.PesquisarClientes,
+  DAO.DMConexao;
 
 {$R *.dfm}
 
