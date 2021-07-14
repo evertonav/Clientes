@@ -1,4 +1,4 @@
-unit Model.DAO.Cliente.Fabrica.Interfaces;
+unit Model.DAO.Cadastro.Fabrica.Interfaces;
 
 interface
 
@@ -7,7 +7,7 @@ uses
   Model.DAO.Cadastro.View.Interfaces;
 
 type
-  IModelDAOClienteFabrica = interface
+  IModelDAOCadastroFabrica = interface
     function DataSource(pValor: TDataSource): IModelDAOCadastroClienteView;
     function Clientes: IModelDAOCadastroClienteView;
   end;

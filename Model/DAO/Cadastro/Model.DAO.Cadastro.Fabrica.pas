@@ -1,14 +1,14 @@
-unit Model.DAO.Cliente.Fabrica;
+unit Model.DAO.Cadastro.Fabrica;
 
 interface
 
 uses
   Data.DB,
   Model.DAO.Cadastro.View.Interfaces,
-  Model.DAO.Cliente.Fabrica.Interfaces;
+  Model.DAO.Cadastro.Fabrica.Interfaces;
 
 type
-  TModelDAOClienteFabrica = class(TInterfacedObject, IModelDAOClienteFabrica)
+  TModelDAOCadastroFabrica = class(TInterfacedObject, IModelDAOCadastroFabrica)
   private
     FCadastroCliente: IModelDAOCadastroClienteView;
     FDataSource: TDataSource;
@@ -16,18 +16,18 @@ type
     function DataSource(pValor: TDataSource): IModelDAOCadastroClienteView;
     function Clientes: IModelDAOCadastroClienteView;
   public
-    class function Criar: IModelDAOClienteFabrica;
+    class function Criar: IModelDAOCadastroFabrica;
   end;
 
 implementation
 
-{ TModelDAOClienteFabrica }
+{ TModelDAOCadastroFabrica }
 
 uses
   System.SysUtils,
   Model.DAO.Cadastro.Cliente;
 
-function TModelDAOClienteFabrica.Clientes: IModelDAOCadastroClienteView;
+function TModelDAOCadastroFabrica.Clientes: IModelDAOCadastroClienteView;
 begin
   if not Assigned(FCadastroCliente) then
     raise Exception.Create('Você deve preencher primeiro o data source!');
@@ -35,12 +35,12 @@ begin
   Result := FCadastroCliente;
 end;
 
-class function TModelDAOClienteFabrica.Criar: IModelDAOClienteFabrica;
+class function TModelDAOCadastroFabrica.Criar: IModelDAOCadastroFabrica;
 begin
   Result := Self.Create;
 end;
 
-function TModelDAOClienteFabrica.DataSource(pValor: TDataSource): IModelDAOCadastroClienteView;
+function TModelDAOCadastroFabrica.DataSource(pValor: TDataSource): IModelDAOCadastroClienteView;
 begin
   FDataSource := pValor;
 

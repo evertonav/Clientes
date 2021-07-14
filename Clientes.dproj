@@ -102,8 +102,6 @@
         </DelphiCompile>
         <DCCReference Include="Controller\Controller.Interfaces.pas"/>
         <DCCReference Include="Controller\Controller.pas"/>
-        <DCCReference Include="Model\DAO\Model.DAO.Cliente.Fabrica.Interfaces.pas"/>
-        <DCCReference Include="Model\DAO\Model.DAO.Cliente.Fabrica.pas"/>
         <DCCReference Include="Model\Conexao\Model.Conexao.Conectar.Fabrica.pas"/>
         <DCCReference Include="Model\Conexao\Model.Conexao.Conectar.FireDAC.FireBird.pas"/>
         <DCCReference Include="Model\Conexao\Model.Conexao.Conectar.Interfaces.pas"/>
@@ -115,15 +113,8 @@
             <Form>ViewPesquisarClientes</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="Model\DAO\Model.DAO.Cliente.Pesquisar.Interfaces.pas"/>
-        <DCCReference Include="Model\DAO\Model.DAO.Cliente.Pesquisar.CPF.pas"/>
         <DCCReference Include="Model\DAO\Model.DAO.Cliente.GetDados.FireDAC.pas"/>
         <DCCReference Include="Model\DAO\Model.DAO.Cliente.GetDados.Interfaces.pas"/>
-        <DCCReference Include="Model\DAO\Model.DAO.Cliente.GetDados.Fabrica.pas"/>
-        <DCCReference Include="Model\DAO\Model.DAO.Cliente.GetDados.Fabrica.Interfaces.pas"/>
-        <DCCReference Include="Model\DAO\Model.DAO.Cliente.Pesquisar.Fabrica.Interfaces.pas"/>
-        <DCCReference Include="Model\DAO\Model.DAO.Cliente.Pesquisar.Fabrica.pas"/>
-        <DCCReference Include="Model\DAO\Model.DAO.Cliente.Pesquisar.Nome.pas"/>
         <DCCReference Include="View\View.Relatorio.pas">
             <Form>ViewRelatorio</Form>
             <FormType>dfm</FormType>
@@ -147,6 +138,13 @@
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="Model\DAO\Cadastro\Model.DAO.Cadastro.View.Interfaces.pas"/>
+        <DCCReference Include="Model\DAO\Pesquisar\Model.DAO.Pesquisar.Cliente.CPF.pas"/>
+        <DCCReference Include="Model\DAO\Pesquisar\Model.DAO.Pesquisar.Cliente.Fabrica.Interfaces.pas"/>
+        <DCCReference Include="Model\DAO\Pesquisar\Model.DAO.Pesquisar.Cliente.Fabrica.pas"/>
+        <DCCReference Include="Model\DAO\Pesquisar\Model.DAO.Pesquisar.Cliente.Interfaces.pas"/>
+        <DCCReference Include="Model\DAO\Pesquisar\Model.DAO.Pesquisar.Cliente.Nome.pas"/>
+        <DCCReference Include="Model\DAO\Cadastro\Model.DAO.Cadastro.Fabrica.pas"/>
+        <DCCReference Include="Model\DAO\Cadastro\Model.DAO.Cadastro.Fabrica.Interfaces.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

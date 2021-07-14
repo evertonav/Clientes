@@ -4,19 +4,19 @@ interface
 
 
 uses
-  Model.DAO.Cliente.Fabrica.Interfaces,
+  Model.DAO.Cadastro.Fabrica.Interfaces,
   Controller.Interfaces,
-  Model.DAO.Cliente.Pesquisar.Fabrica,
-  Model.DAO.Cliente.Pesquisar.Fabrica.Interfaces;
+  Model.DAO.Pesquisar.Cliente.Fabrica,
+  Model.DAO.Pesquisar.Cliente.Fabrica.Interfaces;
 
 type
   TController = class(TInterfacedObject, IController)
   private
-    FDAOClienteFabrica: IModelDAOClienteFabrica;
-    FPesquisarCliente: IModelDAOClientePesquisarFabrica;
+    FDAOClienteFabrica: IModelDAOCadastroFabrica;
+    FPesquisarCliente: IModelDAOPesquisarClienteFabrica;
 
-    function ClientesFabrica: IModelDAOClienteFabrica;
-    function PesquisarClientesFabrica: IModelDAOClientePesquisarFabrica;
+    function ClientesFabrica: IModelDAOCadastroFabrica;
+    function PesquisarClientesFabrica: IModelDAOPesquisarClienteFabrica;
   public
     class function Criar: IController;
   end;
@@ -25,12 +25,13 @@ implementation
 
 { TController }
 
-uses Model.DAO.Cliente.Fabrica;
+uses
+  Model.DAO.Cadastro.Fabrica;
 
-function TController.ClientesFabrica: IModelDAOClienteFabrica;
+function TController.ClientesFabrica: IModelDAOCadastroFabrica;
 begin
   if not Assigned(FDAOClienteFabrica) then
-    FDAOClienteFabrica := TModelDAOClienteFabrica.Criar;
+    FDAOClienteFabrica := TModelDAOCadastroFabrica.Criar;
 
   Result := FDAOClienteFabrica;
 end;
@@ -40,10 +41,10 @@ begin
   Result := Self.Create;
 end;
 
-function TController.PesquisarClientesFabrica: IModelDAOClientePesquisarFabrica;
+function TController.PesquisarClientesFabrica: IModelDAOPesquisarClienteFabrica;
 begin
   if not Assigned(FPesquisarCliente) then
-    FPesquisarCliente := TModelDAOClientePesquisarFabrica.Criar;
+    FPesquisarCliente := TModelDAOPesquisarClienteFabrica.Criar;
 
   Result := FPesquisarCliente;
 end;
