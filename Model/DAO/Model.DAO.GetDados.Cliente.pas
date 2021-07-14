@@ -1,16 +1,16 @@
-unit Model.DAO.Cliente.GetDados.FireDAC;
+unit Model.DAO.GetDados.Cliente;
 
 interface
 
 uses
   FireDAC.Comp.Client,
-  Model.DAO.Cliente.GetDados.Interfaces,
+  Model.DAO.GetDados.Cliente.Interfaces,
   Data.DB,
   System.Generics.Collections,
   Controller.TiposDados;
 
 type
-  TModelDAOClienteGetDados = class(TInterfacedObject, IModelDAOClienteGetDados)
+  TModelDAOGetDadosCliente = class(TInterfacedObject, IModelDAOGetDadosCliente)
   private
     function GetSQLDadosClienteCPF(const pCPF: string): string;
     function GetSQLDadosClienteNome(const pNome: string): string;
@@ -23,75 +23,64 @@ type
     function GetDadosClienteNome(const pNome: string): TList<TDadosCliente>;
     function GetDadosClienteNomeRelatorio(const pNome: string): TDataSet;
   public
-    class function Criar: IModelDAOClienteGetDados;
+    class function Criar: IModelDAOGetDadosCliente;
   end;
 
 implementation
 
 uses
   Model.Conexao.Conectar.Fabrica,
-  System.SysUtils;
+  System.SysUtils,
+  DAO.DMConexao;
 
-{ TModelDAOClienteGetDados }
+{ TModelDAOGetDadosCliente }
 
-class function TModelDAOClienteGetDados.Criar: IModelDAOClienteGetDados;
+class function TModelDAOGetDadosCliente.Criar: IModelDAOGetDadosCliente;
 begin
   Result := Self.Create;
 end;
 
-function TModelDAOClienteGetDados.ExecutarSQL(const pSQL: string): TList<TDadosCliente>;
+function TModelDAOGetDadosCliente.ExecutarSQL(const pSQL: string): TList<TDadosCliente>;
 var
   lQuery: TFDQuery;
-  lConexao: TFDConnection;
   lDadosCliente: TDadosCliente;
 begin
   Result := TList<TDadosCliente>.Create;
 
-  lConexao := TFDConnection.Create(nil);
+  lQuery := TFDQuery.Create(nil);
   try
-    TModelConexaoConectarFabrica.Conexao.Conectar(lConexao);
+    lQuery.Connection := DMConexao.GetConexao;
 
-    lQuery := TFDQuery.Create(nil);
-    try
-      lQuery.Connection := lConexao;
+    lQuery.Close;
+    lQuery.SQL.Clear;
+    lQuery.SQL.Add(pSQL);
+    lQuery.Open;
 
-      lQuery.Close;
-      lQuery.SQL.Clear;
-      lQuery.SQL.Add(pSQL);
-      lQuery.Open;
+    lQuery.First;
+    while not lQuery.Eof do
+    begin
+      lDadosCliente.Codigo := lQuery.FieldByName('CODIGO').AsInteger;
+      lDadosCliente.Nome := lQuery.FieldByName('NOME').AsString;
+      lDadosCliente.CPF := lQuery.FieldByName('CPF').AsString;
 
-      lQuery.First;
-      while not lQuery.Eof do
-      begin
-        lDadosCliente.Codigo := lQuery.FieldByName('CODIGO').AsInteger;
-        lDadosCliente.Nome := lQuery.FieldByName('NOME').AsString;
-        lDadosCliente.CPF := lQuery.FieldByName('CPF').AsString;
+      Result.Add(lDadosCliente);
 
-        Result.Add(lDadosCliente);
-
-        lQuery.Next;
-      end;
-    finally
-      lQuery.Close;
-      lQuery.Free;
+      lQuery.Next;
     end;
   finally
-    lConexao.Free;
+    lQuery.Close;
+    lQuery.Free;
   end;
 end;
 
-function TModelDAOClienteGetDados.ExecutarSQLRelatorio(
+function TModelDAOGetDadosCliente.ExecutarSQLRelatorio(
   const pSQL: string): TDataSet;
 var
   lQuery: TFDQuery;
-  lConexao: TFDConnection;
 begin
   lQuery := TFDQuery.Create(nil);
 
-  lConexao := TFDConnection.Create(lQuery);
-  TModelConexaoConectarFabrica.Conexao.Conectar(lConexao);
-
-  lQuery.Connection := lConexao;
+  lQuery.Connection := DMConexao.GetConexao;
 
   lQuery.Close;
   lQuery.SQL.Clear;
@@ -101,30 +90,30 @@ begin
   Result := lQuery;
 end;
 
-function TModelDAOClienteGetDados.GetDadosClienteCPF(const pCPF: string): TList<TDadosCliente>;
+function TModelDAOGetDadosCliente.GetDadosClienteCPF(const pCPF: string): TList<TDadosCliente>;
 begin
   Result := ExecutarSQL(GetSQLDadosClienteCPF(pCPF));
 end;
 
-function TModelDAOClienteGetDados.GetDadosClienteCPFRelatorio(
+function TModelDAOGetDadosCliente.GetDadosClienteCPFRelatorio(
   const pCPF: string): TDataSet;
 begin
   Result := ExecutarSQLRelatorio(GetSQLDadosClienteCPF(pCPF));
 end;
 
-function TModelDAOClienteGetDados.GetDadosClienteNome(
+function TModelDAOGetDadosCliente.GetDadosClienteNome(
   const pNome: string): TList<TDadosCliente>;
 begin
   Result := ExecutarSQL(GetSQLDadosClienteNome(pNome));
 end;
 
-function TModelDAOClienteGetDados.GetDadosClienteNomeRelatorio(
+function TModelDAOGetDadosCliente.GetDadosClienteNomeRelatorio(
   const pNome: string): TDataSet;
 begin
   Result := ExecutarSQLRelatorio(GetSQLDadosClienteNome(pNome));
 end;
 
-function TModelDAOClienteGetDados.GetSQLDadosClienteCPF(const pCPF: string): string;
+function TModelDAOGetDadosCliente.GetSQLDadosClienteCPF(const pCPF: string): string;
 begin
   Result := 'SELECT '
           + '  CODIGO, '
@@ -140,7 +129,7 @@ begin
           + ' ORDER BY CODIGO ';
 end;
 
-function TModelDAOClienteGetDados.GetSQLDadosClienteNome(const pNome: string): string;
+function TModelDAOGetDadosCliente.GetSQLDadosClienteNome(const pNome: string): string;
 begin
   Result := 'SELECT '
           + '  CODIGO, '

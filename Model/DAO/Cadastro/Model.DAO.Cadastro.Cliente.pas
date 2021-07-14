@@ -28,7 +28,9 @@ type
 implementation
 
 uses
-  StrUtils, System.SysUtils, Model.DAO.Cliente.Informacao;
+  StrUtils,
+  System.SysUtils,
+  Model.DAO.Uteis.Cliente;
 
 { TModelDAOCadastroCliente }
 

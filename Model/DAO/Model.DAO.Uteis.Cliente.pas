@@ -1,4 +1,4 @@
-unit Model.DAO.Cliente.Informacao;
+unit Model.DAO.Uteis.Cliente;
 
 interface
 

@@ -113,8 +113,8 @@
             <Form>ViewPesquisarClientes</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="Model\DAO\Model.DAO.Cliente.GetDados.FireDAC.pas"/>
-        <DCCReference Include="Model\DAO\Model.DAO.Cliente.GetDados.Interfaces.pas"/>
+        <DCCReference Include="Model\DAO\Model.DAO.GetDados.Cliente.pas"/>
+        <DCCReference Include="Model\DAO\Model.DAO.GetDados.Cliente.Interfaces.pas"/>
         <DCCReference Include="View\View.Relatorio.pas">
             <Form>ViewRelatorio</Form>
             <FormType>dfm</FormType>
@@ -126,7 +126,7 @@
         <DCCReference Include="Controller\Controller.TiposDados.pas"/>
         <DCCReference Include="Model\Conexao\Model.Conexao.DadosBanco.pas"/>
         <DCCReference Include="Model\Conexao\Model.Conexao.DadosBanco.Interfaces.pas"/>
-        <DCCReference Include="Model\DAO\Model.DAO.Cliente.Informacao.pas"/>
+        <DCCReference Include="Model\DAO\Model.DAO.Uteis.Cliente.pas"/>
         <DCCReference Include="Model\DAO\Cadastro\Model.DAO.Cadastro.Interfaces.pas"/>
         <DCCReference Include="Model\DAO\Cadastro\Model.DAO.Cadastro.pas"/>
         <DCCReference Include="Model\DAO\Model.DAO.Eventos.DataSet.Interfaces.pas"/>

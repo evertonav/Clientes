@@ -1,4 +1,4 @@
-unit Model.DAO.Cliente.GetDados.Interfaces;
+unit Model.DAO.GetDados.Cliente.Interfaces;
 
 interface
 
@@ -8,7 +8,7 @@ uses
   Controller.TiposDados;
 
 type
-  IModelDAOClienteGetDados = interface
+  IModelDAOGetDadosCliente = interface
     ['{4F4125BC-C718-4447-8813-96EBF0C157B7}']
     function GetDadosClienteCPF(const pCPF: string): TList<TDadosCliente>;
     function GetDadosClienteCPFRelatorio(const pCPF: string): TDataSet;

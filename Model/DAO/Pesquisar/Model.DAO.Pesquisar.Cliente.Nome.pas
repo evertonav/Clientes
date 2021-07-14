@@ -24,7 +24,7 @@ type
 implementation
 
 uses
-  Model.DAO.Cliente.GetDados.FireDAC;
+  Model.DAO.GetDados.Cliente;
 
 { TModelDAOPesquisarClienteNome }
 
@@ -35,7 +35,7 @@ end;
 
 function TModelDAOPesquisarClienteNome.GerarDadosRelatorio: TDataSet;
 begin
-  Result := TModelDAOClienteGetDados
+  Result := TModelDAOGetDadosCliente
               .Criar
               .GetDadosClienteNomeRelatorio(FNome);
 end;
@@ -49,7 +49,7 @@ end;
 
 function TModelDAOPesquisarClienteNome.Pesquisar: TList<TDadosCliente>;
 begin
-  Result := TModelDAOClienteGetDados
+  Result := TModelDAOGetDadosCliente
               .Criar
               .GetDadosClienteNome(FNome);
 end;
