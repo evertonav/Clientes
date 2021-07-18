@@ -132,11 +132,6 @@
         <DCCReference Include="Model\DAO\Model.DAO.Eventos.DataSet.Interfaces.pas"/>
         <DCCReference Include="Model\DAO\Model.DAO.Eventos.DataSet.pas"/>
         <DCCReference Include="Model\DAO\Cadastro\Model.DAO.Cadastro.Cliente.pas"/>
-        <DCCReference Include="Model\DAO\DAO.DMConexao.pas">
-            <Form>DMConexao</Form>
-            <FormType>dfm</FormType>
-            <DesignClass>TDataModule</DesignClass>
-        </DCCReference>
         <DCCReference Include="Model\DAO\Cadastro\Model.DAO.Cadastro.View.Interfaces.pas"/>
         <DCCReference Include="Model\DAO\Pesquisar\Model.DAO.Pesquisar.Cliente.CPF.pas"/>
         <DCCReference Include="Model\DAO\Pesquisar\Model.DAO.Pesquisar.Cliente.Fabrica.Interfaces.pas"/>
@@ -145,6 +140,9 @@
         <DCCReference Include="Model\DAO\Pesquisar\Model.DAO.Pesquisar.Cliente.Nome.pas"/>
         <DCCReference Include="Model\DAO\Cadastro\Model.DAO.Cadastro.Fabrica.pas"/>
         <DCCReference Include="Model\DAO\Cadastro\Model.DAO.Cadastro.Fabrica.Interfaces.pas"/>
+        <DCCReference Include="Model\Conexao\Model.Conexao.Interfaces.pas"/>
+        <DCCReference Include="Model\Conexao\Model.Conexao.FireDac.pas"/>
+        <DCCReference Include="Model\Conexao\Model.Conexao.Fabrica.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

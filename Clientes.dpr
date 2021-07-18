@@ -30,7 +30,6 @@ uses
   Model.DAO.Eventos.DataSet.Interfaces in 'Model\DAO\Model.DAO.Eventos.DataSet.Interfaces.pas',
   Model.DAO.Eventos.DataSet in 'Model\DAO\Model.DAO.Eventos.DataSet.pas',
   Model.DAO.Cadastro.Cliente in 'Model\DAO\Cadastro\Model.DAO.Cadastro.Cliente.pas',
-  DAO.DMConexao in 'Model\DAO\DAO.DMConexao.pas' {DMConexao: TDataModule},
   Model.DAO.Cadastro.View.Interfaces in 'Model\DAO\Cadastro\Model.DAO.Cadastro.View.Interfaces.pas',
   Model.DAO.Pesquisar.Cliente.CPF in 'Model\DAO\Pesquisar\Model.DAO.Pesquisar.Cliente.CPF.pas',
   Model.DAO.Pesquisar.Cliente.Fabrica.Interfaces in 'Model\DAO\Pesquisar\Model.DAO.Pesquisar.Cliente.Fabrica.Interfaces.pas',
@@ -38,7 +37,10 @@ uses
   Model.DAO.Pesquisar.Cliente.Interfaces in 'Model\DAO\Pesquisar\Model.DAO.Pesquisar.Cliente.Interfaces.pas',
   Model.DAO.Pesquisar.Cliente.Nome in 'Model\DAO\Pesquisar\Model.DAO.Pesquisar.Cliente.Nome.pas',
   Model.DAO.Cadastro.Fabrica in 'Model\DAO\Cadastro\Model.DAO.Cadastro.Fabrica.pas',
-  Model.DAO.Cadastro.Fabrica.Interfaces in 'Model\DAO\Cadastro\Model.DAO.Cadastro.Fabrica.Interfaces.pas';
+  Model.DAO.Cadastro.Fabrica.Interfaces in 'Model\DAO\Cadastro\Model.DAO.Cadastro.Fabrica.Interfaces.pas',
+  Model.Conexao.Interfaces in 'Model\Conexao\Model.Conexao.Interfaces.pas',
+  Model.Conexao.FireDac in 'Model\Conexao\Model.Conexao.FireDac.pas',
+  Model.Conexao.Fabrica in 'Model\Conexao\Model.Conexao.Fabrica.pas';
 
 {$R *.res}
 
@@ -46,6 +48,5 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TViewPrincipal, ViewPrincipal);
-  Application.CreateForm(TDMConexao, DMConexao);
   Application.Run;
 end.
