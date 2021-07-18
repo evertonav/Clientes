@@ -35,8 +35,7 @@ implementation
 
 uses
   View.CadastroCliente,
-  View.PesquisarClientes,
-  DAO.DMConexao;
+  View.PesquisarClientes;
 
 {$R *.dfm}
 
@@ -62,7 +61,7 @@ end;
 
 procedure TViewPrincipal.FormCreate(Sender: TObject);
 begin
-  //ReportMemoryLeaksOnShutdown := True;
+  ReportMemoryLeaksOnShutdown := True;
 end;
 
 procedure TViewPrincipal.FormResize(Sender: TObject);

@@ -21,7 +21,7 @@ type
 implementation
 
 uses
-  DAO.DMConexao;
+  Model.Conexao.Fabrica;
 
 { TModelDAOClienteValidar }
 
@@ -37,7 +37,7 @@ var
 begin
   lQuery := TFDQuery.Create(nil);
   try
-    lQuery.Connection := DMConexao.GetConexao;
+    lQuery.Connection := TModelConexaoFabrica.ConexaoFireDac;
 
     lQuery.Close;
     lQuery.SQL.Clear;
@@ -67,7 +67,7 @@ var
 begin
   lQuery := TFDQuery.Create(nil);
   try
-    lQuery.Connection := DMConexao.GetConexao;
+    lQuery.Connection := TModelConexaoFabrica.ConexaoFireDac;
 
     lQuery.Close;
     lQuery.SQL.Clear;

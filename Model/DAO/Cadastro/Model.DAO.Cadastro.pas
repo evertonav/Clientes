@@ -20,7 +20,6 @@ uses
   FireDAC.VCLUI.Wait,
   FireDAC.Phys.PG,
   Data.DB,
-  DAO.DMConexao,
   Model.DAO.Eventos.DataSet.Interfaces,
   Model.DAO.Eventos.DataSet;
 
@@ -62,7 +61,8 @@ type
 implementation
 
 uses
-  System.SysUtils;
+  System.SysUtils,
+  Model.Conexao.Fabrica;
 
 { TModelDAOCadastro }
 
@@ -122,7 +122,7 @@ end;
 constructor TModelDAOCadastro.Create(pDataSource: TDataSource);
 begin
   FQuery := TFDQuery.Create(nil);
-  FQuery.Connection := DMConexao.GetConexao;
+  FQuery.Connection := TModelConexaoFabrica.ConexaoFireDac;
   pDataSource.DataSet := FQuery;
 end;
 

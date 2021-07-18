@@ -29,9 +29,8 @@ type
 implementation
 
 uses
-  Model.Conexao.Conectar.Fabrica,
-  System.SysUtils,
-  DAO.DMConexao;
+  Model.Conexao.Fabrica,
+  System.SysUtils;
 
 { TModelDAOGetDadosCliente }
 
@@ -49,7 +48,7 @@ begin
 
   lQuery := TFDQuery.Create(nil);
   try
-    lQuery.Connection := DMConexao.GetConexao;
+    lQuery.Connection := TModelConexaoFabrica.ConexaoFireDac;
 
     lQuery.Close;
     lQuery.SQL.Clear;
@@ -80,7 +79,7 @@ var
 begin
   lQuery := TFDQuery.Create(nil);
 
-  lQuery.Connection := DMConexao.GetConexao;
+  lQuery.Connection := TModelConexaoFabrica.ConexaoFireDac;
 
   lQuery.Close;
   lQuery.SQL.Clear;
