@@ -6,7 +6,8 @@ uses
   Data.DB,
   Model.DAO.Pesquisar.Cliente.Interfaces,
   System.Generics.Collections,
-  Controller.TiposDados;
+  Controller.TiposDados,
+  Model.Query.Fabrica.Interfaces;
 
 type
   TModelDAOPesquisarClienteCPF = class(TInterfacedObject,
@@ -16,7 +17,7 @@ type
 
     function Parametro(pValor: string): IModelDAOPesquisarCliente;
     function Pesquisar: TList<TDadosCliente>;
-    function GerarDadosRelatorio: TDataSet;
+    function GerarDadosRelatorio: IModelQueryFabrica;
   public
     class function Criar: IModelDAOPesquisarCliente;
   end;
@@ -33,7 +34,7 @@ begin
   Result := Self.Create;
 end;
 
-function TModelDAOPesquisarClienteCPF.GerarDadosRelatorio: TDataSet;
+function TModelDAOPesquisarClienteCPF.GerarDadosRelatorio: IModelQueryFabrica;
 begin
   Result := TModelDAOGetDadosCliente
               .Criar

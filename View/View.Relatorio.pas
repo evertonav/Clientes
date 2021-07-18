@@ -50,41 +50,41 @@ procedure TViewRelatorio.ImprimirRelatorio(const pFiltro: string;
   const pTipoFiltro: TTipoFiltro);
 begin
   //Ver depois porque da memory leak
-  try
-    case pTipoFiltro of
-      tfNome:
-      begin
-        repHistoricoVisitas.DataSet := TController
-                                         .Criar
-                                         .PesquisarClientesFabrica
-                                         .PesquisarClienteNome
-                                         .Parametro(pFiltro)
-                                         .GerarDadosRelatorio;
-      end;
-      tfCPF:
-      begin
-        repHistoricoVisitas.DataSet := TController
-                                         .Criar
-                                         .PesquisarClientesFabrica
-                                         .PesquisarClienteCPF
-                                         .Parametro(pFiltro)
-                                         .GerarDadosRelatorio;
-      end;
+  case pTipoFiltro of
+    tfNome:
+    begin
+      repHistoricoVisitas.DataSet := TController
+                                       .Criar
+                                       .PesquisarClientesFabrica
+                                       .PesquisarClienteNome
+                                       .Parametro(pFiltro)
+                                       .GerarDadosRelatorio
+                                       .Query
+                                       .GetQuery;
     end;
-
-    edtCodigo.DataSet := repHistoricoVisitas.DataSet;
-    edtNome.DataSet := repHistoricoVisitas.DataSet;
-    edtCPF.DataSet := repHistoricoVisitas.DataSet;
-    edtEndereco.DataSet := repHistoricoVisitas.DataSet;
-    edtCidade.DataSet := repHistoricoVisitas.DataSet;
-    edtEstado.DataSet := repHistoricoVisitas.DataSet;
-
-    repHistoricoVisitas.PreviewModal;
-
-    Application.ProcessMessages;
-  finally
-    repHistoricoVisitas.DataSet.Free;
+    tfCPF:
+    begin
+      repHistoricoVisitas.DataSet := TController
+                                       .Criar
+                                       .PesquisarClientesFabrica
+                                       .PesquisarClienteCPF
+                                       .Parametro(pFiltro)
+                                       .GerarDadosRelatorio
+                                       .Query
+                                       .GetQuery;
+    end;
   end;
+
+  edtCodigo.DataSet := repHistoricoVisitas.DataSet;
+  edtNome.DataSet := repHistoricoVisitas.DataSet;
+  edtCPF.DataSet := repHistoricoVisitas.DataSet;
+  edtEndereco.DataSet := repHistoricoVisitas.DataSet;
+  edtCidade.DataSet := repHistoricoVisitas.DataSet;
+  edtEstado.DataSet := repHistoricoVisitas.DataSet;
+
+  repHistoricoVisitas.PreviewModal;
+
+  Application.ProcessMessages;
 end;
 
 end.

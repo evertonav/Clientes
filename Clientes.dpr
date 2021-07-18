@@ -40,7 +40,11 @@ uses
   Model.DAO.Cadastro.Fabrica.Interfaces in 'Model\DAO\Cadastro\Model.DAO.Cadastro.Fabrica.Interfaces.pas',
   Model.Conexao.Interfaces in 'Model\Conexao\Model.Conexao.Interfaces.pas',
   Model.Conexao.FireDac in 'Model\Conexao\Model.Conexao.FireDac.pas',
-  Model.Conexao.Fabrica in 'Model\Conexao\Model.Conexao.Fabrica.pas';
+  Model.Conexao.Fabrica in 'Model\Conexao\Model.Conexao.Fabrica.pas',
+  Model.Query.Interfaces in 'Model\Query\Model.Query.Interfaces.pas',
+  Model.Query.FireDac in 'Model\Query\Model.Query.FireDac.pas',
+  Model.Query.Fabrica.Interfaces in 'Model\Query\Model.Query.Fabrica.Interfaces.pas',
+  Model.Query.Fabrica in 'Model\Query\Model.Query.Fabrica.pas';
 
 {$R *.res}
 

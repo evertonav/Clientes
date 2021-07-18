@@ -122,7 +122,7 @@ end;
 constructor TModelDAOCadastro.Create(pDataSource: TDataSource);
 begin
   FQuery := TFDQuery.Create(nil);
-  FQuery.Connection := TModelConexaoFabrica.ConexaoFireDac;
+  FQuery.Connection := TModelConexaoFabrica.Conexao;
   pDataSource.DataSet := FQuery;
 end;
 

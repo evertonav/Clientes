@@ -5,14 +5,15 @@ interface
 uses
   Data.DB,
   System.Generics.Collections,
-  Controller.TiposDados;
+  Controller.TiposDados,
+  Model.Query.Fabrica.Interfaces;
 
 type
   IModelDAOPesquisarCliente = interface
     ['{C42F0698-7D26-4CE6-87FB-3D61F3B2BBCD}']
     function Parametro(pValor: string): IModelDAOPesquisarCliente;
     function Pesquisar: TList<TDadosCliente>;
-    function GerarDadosRelatorio: TDataSet;
+    function GerarDadosRelatorio: IModelQueryFabrica;
   end;
 
 implementation

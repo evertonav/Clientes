@@ -37,7 +37,7 @@ var
 begin
   lQuery := TFDQuery.Create(nil);
   try
-    lQuery.Connection := TModelConexaoFabrica.ConexaoFireDac;
+    lQuery.Connection := TModelConexaoFabrica.Conexao;
 
     lQuery.Close;
     lQuery.SQL.Clear;
@@ -67,7 +67,7 @@ var
 begin
   lQuery := TFDQuery.Create(nil);
   try
-    lQuery.Connection := TModelConexaoFabrica.ConexaoFireDac;
+    lQuery.Connection := TModelConexaoFabrica.Conexao;
 
     lQuery.Close;
     lQuery.SQL.Clear;
