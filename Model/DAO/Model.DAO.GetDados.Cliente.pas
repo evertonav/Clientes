@@ -71,7 +71,6 @@ end;
 function TModelDAOGetDadosCliente.ExecutarSQLRelatorio(
   const pSQL: string): IModelQueryFabrica;
 var
-  lQuery: TDataSet;
   lQueryFabrica: IModelQueryFabrica;
 begin
   lQueryFabrica := TModelQueryFabrica.Criar;

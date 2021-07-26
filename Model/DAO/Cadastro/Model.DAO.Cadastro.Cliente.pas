@@ -6,8 +6,6 @@ uses
   Data.DB,
   Model.DAO.Cadastro,
   Model.DAO.Cadastro.Interfaces,
-  Model.DAO.Eventos.DataSet.Interfaces,
-  Model.DAO.Eventos.DataSet,
   Model.DAO.Cadastro.View.Interfaces;
 
 type
@@ -69,23 +67,23 @@ const
                         + ' FROM '
                         + '   CLIENTES ';
 begin
-  FecharDataSet;
+  Query.FecharDataSet;
 
-  AdicionarSQL(CONST_BUSCAR_CLIENTES
-              + IfThen(FCodigo > 0,
-                       'WHERE CODIGO = ' + FCodigo.ToString));
+  Query.AdicionarSQL(CONST_BUSCAR_CLIENTES
+                     + IfThen(FCodigo > 0,
+                     'WHERE CODIGO = ' + FCodigo.ToString));
 
-  EventosDataSet.BeforePost(BeforePost);
-  EventosDataSet.NewRecord(NewRecorde);
+  Query.EventosDataSet.BeforePost(BeforePost);
+  Query.EventosDataSet.NewRecord(NewRecorde);
 
   if Assigned(FAfterDelete) then
-    EventosDataSet.AfterDelete(FAfterDelete);
+    Query.EventosDataSet.AfterDelete(FAfterDelete);
 
-  AdicionarEventosDataSet;
+  Query.AdicionarEventosDataSet;
 
-  AbrirDataSet;
+  Query.AbrirDataSet;
 
-  AdicionarMascara('CPF',  '###.###.###-##;0');
+  Query.AdicionarMascara('CPF',  '###.###.###-##;0');
 
   Result := Self;
 end;

@@ -14,6 +14,7 @@ uses
   FireDAC.Phys,
   FireDAC.VCLUI.Wait,
   FireDAC.Comp.Client,
+  FireDAC.Phys.FB,
   Data.DB,
   Model.Conexao.Interfaces;
 

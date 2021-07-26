@@ -26,7 +26,6 @@ uses
   Model.Conexao.DadosBanco.Interfaces in 'Model\Conexao\Model.Conexao.DadosBanco.Interfaces.pas',
   Model.DAO.Uteis.Cliente in 'Model\DAO\Model.DAO.Uteis.Cliente.pas',
   Model.DAO.Cadastro.Interfaces in 'Model\DAO\Cadastro\Model.DAO.Cadastro.Interfaces.pas',
-  Model.DAO.Cadastro in 'Model\DAO\Cadastro\Model.DAO.Cadastro.pas',
   Model.DAO.Eventos.DataSet.Interfaces in 'Model\DAO\Model.DAO.Eventos.DataSet.Interfaces.pas',
   Model.DAO.Eventos.DataSet in 'Model\DAO\Model.DAO.Eventos.DataSet.pas',
   Model.DAO.Cadastro.Cliente in 'Model\DAO\Cadastro\Model.DAO.Cadastro.Cliente.pas',
@@ -44,7 +43,8 @@ uses
   Model.Query.Interfaces in 'Model\Query\Model.Query.Interfaces.pas',
   Model.Query.FireDac in 'Model\Query\Model.Query.FireDac.pas',
   Model.Query.Fabrica.Interfaces in 'Model\Query\Model.Query.Fabrica.Interfaces.pas',
-  Model.Query.Fabrica in 'Model\Query\Model.Query.Fabrica.pas';
+  Model.Query.Fabrica in 'Model\Query\Model.Query.Fabrica.pas',
+  Model.DAO.Cadastro in 'Model\DAO\Cadastro\Model.DAO.Cadastro.pas';
 
 {$R *.res}
 
