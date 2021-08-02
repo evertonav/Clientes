@@ -44,7 +44,10 @@ uses
   Model.Query.FireDac in 'Model\Query\Model.Query.FireDac.pas',
   Model.Query.Fabrica.Interfaces in 'Model\Query\Model.Query.Fabrica.Interfaces.pas',
   Model.Query.Fabrica in 'Model\Query\Model.Query.Fabrica.pas',
-  Model.DAO.Cadastro in 'Model\DAO\Cadastro\Model.DAO.Cadastro.pas';
+  Model.DAO.Cadastro in 'Model\DAO\Cadastro\Model.DAO.Cadastro.pas',
+  Model.DAO.GerarRelatorio.Interfaces in 'Model\DAO\Relatorio\Model.DAO.GerarRelatorio.Interfaces.pas',
+  Model.DAO.GerarRelatorio.Clientes.CPF in 'Model\DAO\Relatorio\Model.DAO.GerarRelatorio.Clientes.CPF.pas',
+  Model.DAO.GerarRelatorio.Clientes.Nome in 'Model\DAO\Relatorio\Model.DAO.GerarRelatorio.Clientes.Nome.pas';
 
 {$R *.res}
 

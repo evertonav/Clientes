@@ -55,10 +55,9 @@ begin
     begin
       repHistoricoVisitas.DataSet := TController
                                        .Criar
-                                       .PesquisarClientesFabrica
-                                       .PesquisarClienteNome
+                                       .GerarRelatorioClienteNome
                                        .Parametro(pFiltro)
-                                       .GerarDadosRelatorio
+                                       .Gerar
                                        .Query
                                        .GetQuery;
     end;
@@ -66,10 +65,9 @@ begin
     begin
       repHistoricoVisitas.DataSet := TController
                                        .Criar
-                                       .PesquisarClientesFabrica
-                                       .PesquisarClienteCPF
+                                       .GerarRelatorioClienteCPF
                                        .Parametro(pFiltro)
-                                       .GerarDadosRelatorio
+                                       .Gerar
                                        .Query
                                        .GetQuery;
     end;

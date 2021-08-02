@@ -147,6 +147,9 @@
         <DCCReference Include="Model\Query\Model.Query.Fabrica.Interfaces.pas"/>
         <DCCReference Include="Model\Query\Model.Query.Fabrica.pas"/>
         <DCCReference Include="Model\DAO\Cadastro\Model.DAO.Cadastro.pas"/>
+        <DCCReference Include="Model\DAO\Relatorio\Model.DAO.GerarRelatorio.Interfaces.pas"/>
+        <DCCReference Include="Model\DAO\Relatorio\Model.DAO.GerarRelatorio.Clientes.CPF.pas"/>
+        <DCCReference Include="Model\DAO\Relatorio\Model.DAO.GerarRelatorio.Clientes.Nome.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

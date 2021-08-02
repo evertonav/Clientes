@@ -17,7 +17,6 @@ type
 
     function Parametro(pValor: string): IModelDAOPesquisarCliente;
     function Pesquisar: TList<TDadosCliente>;
-    function GerarDadosRelatorio: IModelQueryFabrica;
   public
     class function Criar: IModelDAOPesquisarCliente;
   end;
@@ -32,13 +31,6 @@ uses
 class function TModelDAOPesquisarClienteNome.Criar: IModelDAOPesquisarCliente;
 begin
   Result := Self.Create;
-end;
-
-function TModelDAOPesquisarClienteNome.GerarDadosRelatorio: IModelQueryFabrica;
-begin
-  Result := TModelDAOGetDadosCliente
-              .Criar
-              .GetDadosClienteNomeRelatorio(FNome);
 end;
 
 function TModelDAOPesquisarClienteNome.Parametro(
