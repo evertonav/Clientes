@@ -52,8 +52,7 @@ implementation
 uses
   Controller,
   Data.DB,
-  View.CadastroCliente,
-  View.Relatorio;
+  View.CadastroCliente;
 
 {$R *.dfm}
 
@@ -71,7 +70,7 @@ end;
 procedure TViewPesquisarClientes.btnImprimirClick(Sender: TObject);
 begin
   //Ver depois porque da memory leak
-  if ltvPesquisarClientes.Items.Count > 0 then
+  {if ltvPesquisarClientes.Items.Count > 0 then
   begin
     ViewRelatorio := TViewRelatorio.Create(Self);
     try
@@ -80,7 +79,7 @@ begin
     finally
       ViewRelatorio.Free;
     end;
-  end;
+  end; }
 end;
 
 procedure TViewPesquisarClientes.btnPesquisarClick(Sender: TObject);

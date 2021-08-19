@@ -19,7 +19,6 @@ uses
   View.PesquisarClientes in 'View\View.PesquisarClientes.pas' {ViewPesquisarClientes},
   Model.DAO.GetDados.Cliente in 'Model\DAO\Model.DAO.GetDados.Cliente.pas',
   Model.DAO.GetDados.Cliente.Interfaces in 'Model\DAO\Model.DAO.GetDados.Cliente.Interfaces.pas',
-  View.Relatorio in 'View\View.Relatorio.pas' {ViewRelatorio},
   View.Principal in 'View\View.Principal.pas' {ViewPrincipal},
   Controller.TiposDados in 'Controller\Controller.TiposDados.pas',
   Model.Conexao.DadosBanco in 'Model\Conexao\Model.Conexao.DadosBanco.pas',
